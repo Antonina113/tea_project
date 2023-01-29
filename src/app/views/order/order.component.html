@@ -1,0 +1,122 @@
+<form class="mb-5" id="form" *ngIf="showForm" [formGroup]="formValues" novalidate #orderForm="ngForm">
+  <h2 class="m-5 mx-auto text-center fs-2 fw-bold">Сделать заказ</h2>
+  <div class=" col-lg-6 mx-auto pt-2">
+    <div class="row ">
+      <div class="col-md-4  ">
+        <label for="exampleInputName" class="form-label fw-semibold">Имя</label>
+        <input type="text" class="form-control" id="exampleInputName"
+        formControlName="name">
+        <div *ngIf="formValues.get('name')?.invalid &&
+        (formValues.get('name')?.touched || formValues.get('name')?.dirty)">
+          <div class="invalid-feedback" *ngIf="formValues.get('name')?.errors?.['required']">
+            Введите имя
+          </div>
+          <div class="invalid-feedback" *ngIf="formValues.get('name')?.errors?.['pattern']">
+            Имя может содержать только буквы
+          </div>
+        </div>
+
+        </div>
+
+      <div class="col-md-4  ">
+        <label for="exampleInputSurname" class="form-label fw-semibold">Фамилия</label>
+        <input type="text" class="form-control" id="exampleInputSurname"
+               formControlName="last_name">
+        <div *ngIf="formValues.get('last_name')?.invalid &&
+        (formValues.get('last_name')?.touched || formValues.get('last_name')?.dirty)">
+          <div class="invalid-feedback" *ngIf="formValues.get('last_name')?.errors?.['required']">
+            Введите фамилию
+          </div>
+          <div class="invalid-feedback" *ngIf="formValues.get('last_name')?.errors?.['pattern']">
+            Фамилия может содержать только буквы
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4  ">
+        <label for="exampleInputPhone" class="form-label fw-semibold">Телефон</label>
+        <input type="text" class="form-control" id="exampleInputPhone"
+               formControlName="phone">
+        <div *ngIf="formValues.get('phone')?.invalid &&
+        (formValues.get('phone')?.touched || formValues.get('phone')?.dirty)">
+        <div class="invalid-feedback" *ngIf="formValues.get('phone')?.errors?.['required']">
+          Введите Ваш номер телефона
+        </div>
+        <div class="invalid-feedback" *ngIf="formValues.get('phone')?.errors?.['pattern']">
+          Телефон может содержать только цифры( мин 11)
+        </div>
+      </div>
+      </div>
+      <div class="col-md-4  ">
+        <label for="exampleInputPhone" class="form-label fw-semibold" >Товар</label>
+        <input type="text" class="form-control" id="exampleInputProduct"
+               formControlName="productTitle" >
+      </div>
+      <div class="col-md-4  ">
+        <label for="exampleInputPhone" class="form-label fw-semibold">Комментарий к заказу</label>
+        <input type="text" class="form-control" id="exampleInputComment"
+               formControlName="comment">
+      </div>
+
+
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-6  ">
+        <label for="exampleInputCountry" class="form-label fw-semibold">Страна</label>
+        <input type="text" class="form-control" id="exampleInputCountry"
+               formControlName="country">
+        <div *ngIf="formValues.get('country')?.invalid &&
+        (formValues.get('country')?.touched || formValues.get('country')?.dirty)">
+          <div class="invalid-feedback" *ngIf="formValues.get('country')?.errors?.['required']">
+            Введите название страны
+          </div>
+          <div class="invalid-feedback" *ngIf="formValues.get('country')?.errors?.['pattern']">
+            Название страны может содержать только буквы
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6  ">
+        <label for="exampleInputIndex" class="form-label fw-semibold">Индекс</label>
+        <input type="text" class="form-control" id="exampleInputIndex"
+               formControlName="zip">
+        <div *ngIf="formValues.get('zip')?.invalid &&
+        (formValues.get('zip')?.touched || formValues.get('zip')?.dirty)">
+          <div class="invalid-feedback" *ngIf="formValues.get('zip')?.errors?.['required']">
+            Введите индекс
+          </div>
+          <div class="invalid-feedback" *ngIf="formValues.get('zip')?.errors?.['pattern']">
+           Индекс может содержать только цифры
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row mt-3">
+      <div class="col-md ">
+        <label for="exampleInputAddress" class="form-label fw-semibold">Адрес</label>
+        <input type="text" class="form-control" id="exampleInputAddress"
+               formControlName="address">
+        <div *ngIf="formValues.get('address')?.invalid &&
+        (formValues.get('address')?.touched || formValues.get('address')?.dirty)">
+          <div class="invalid-feedback" *ngIf="formValues.get('address')?.errors?.['required']">
+            Введите Ваш Адрес
+          </div>
+          <div class="invalid-feedback" *ngIf="formValues.get('address')?.errors?.['pattern']">
+            Адес может содержать только ....
+          </div>
+        </div>
+      </div>
+    </div>
+    <button   class="btn btn-primary mt-4 px-4  open-end-order hvr-sweep-to-right"
+       id="btn-form" [disabled]="orderForm.invalid" (click)="createOrder()">Отправить</button>
+    <div class="send-error" *ngIf="sendError">Произошла ошибка. Попробуйте еще раз.</div>
+  </div>
+
+</form>
+<div *ngIf="loading" class="loader-bg">
+  <div class="loader"></div>
+</div>
+  <div id="end-order"class="container  mx-auto " *ngIf="!showForm">
+  <div class="d-flex flex-column justify-content-center align-items-center mx-auto">
+    <div> Спасибо за заказ. Мы свяжемся с вами в ближайшее время!</div>
+  </div>
+</div>

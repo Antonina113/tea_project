@@ -1,0 +1,83 @@
+<div class="container  mx-auto ">
+  <div class="your-class">
+    <div class="card  border-0 rounded-0 wow animate__zoomIn">
+      <img src="../../../assets/images/image10.png" class="d-block card-img " alt="...">
+      <div class="card-img-overlay  p-5 d-flex align-items-center">
+        <div class=" ms-md-4 ps-sm-5">
+          <div class="row mx-ms-auto">
+            <div class="title col card-title  fw-bold pb-lg-2 ">Скидки на травянные чаи</div>
+          </div>
+          <div class="row my-md-4 pb-md-2">
+            <p class="col card-text  py-lg-5 py-sm-3 py-2 main-text ">Узнай все подробности, заполнив
+              заявку</p>
+          </div>
+          <div class="row pt-2">
+            <div class="col">
+              <button type="button" class="  btn btn-primary px-sm-5 hvr-grow-shadow " [routerLink]="'/catalog'">
+                Смотреть
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-block">
+    <h2 class="m-5 mx-auto text-center fs-2 fw-bold ">Ответы на часто задаваемые вопросы</h2>
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+      <ngb-panel>
+        <ng-template ngbPanelTitle >
+          <div >Собираете ли вы подарочные боксы?</div>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус,
+          объем и стоимость!
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel>
+      <ng-template ngbPanelTitle>
+        Сколько у вас разновидностей чая?
+      </ng-template>
+        <ng-template ngbPanelContent>
+          У нас есть 6 разновидностей чая...
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel>
+      <ng-template ngbPanelTitle>
+        В какой срок осуществляется доставка?
+      </ng-template>
+        <ng-template ngbPanelContent>
+          2 дня
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel>
+      <ng-template ngbPanelTitle>
+        У вас обновляется ассортимент?
+      </ng-template>
+        <ng-template ngbPanelContent>
+          Обновление осуществляется несколько раз в месяц по мере появления свежих коллекций в ассортименте
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel>
+      <ng-template ngbPanelTitle>
+        Какого объема у вас пачки чая?
+      </ng-template>
+        <ng-template ngbPanelContent>
+          100 гр., 500гр
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </div>
+
+  <div class="popup_watch " *ngIf="showPopup">
+    <div class="  text-center w-50 d-flex justify-content-center align-items-center flex-column position-relative">
+      <div class="mb-4 h4 popup_text">Посмотрите наши чайные коллекции</div>
+      <button class="btn btn-primary" [routerLink]="'/catalog'">Смотреть</button>
+      <button type="button" class="btn-close position-absolute top-0 end-0" (click)="hidePopup()"
+              aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+

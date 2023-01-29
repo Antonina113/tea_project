@@ -1,0 +1,75 @@
+
+.title {
+  font-size: 48px;
+}
+.main-text{
+  font-size: 20px;
+  color: black;
+}
+.popup_watch{
+  font-size: 24px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.49);
+
+}
+.popup_watch >div{
+  height: 330px;
+  background-color: #dee2e6;;
+}
+.popup_text{
+  max-width: 300px;
+}
+
+
+@media screen and (max-width: 992px) {
+  .popup_watch > div{
+    padding: 10px;
+    height: 250px;
+  }
+  .title {
+    font-size: 24px;
+  }
+  .main-text{
+    font-size: 16px;
+
+  }
+}
+@media screen and (max-width: 576px) {
+  .title {
+    font-size: 16px;
+  }
+  .main-text{
+    font-size: 12px;
+
+  }
+  .btn{
+    font-size: 12px;
+  }
+  .popup_watch .btn-close{
+    width: 5px;
+    height: 5px;
+    margin: 5px;
+  }
+  .popup_watch > div{
+    height: 150px;
+  }
+  .popup_text{
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .title {
+    font-size: 14px;
+  }
+  .main-text{
+    font-size: 10px;
+
+  }}
+

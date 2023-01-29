@@ -1,0 +1,37 @@
+input.ng-invalid.ng-dirty, input.ng-invalid.ng-touched{
+border-color: red;
+}
+.invalid-feedback{
+  display: block;
+}
+
+
+#end-order{
+  padding: 40px 88px;
+  grid-template-columns:1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+  grid-row-gap: 5px;
+  display: flex;
+  color: rgba(0, 0, 0, 0.71);
+  text-align: center;
+
+}
+#end-order__btn {
+  color: rgba(0, 0, 0, 0.71);
+  border: 1px solid rgba(0, 0, 0, 0.71);
+}
+
+.send-error{
+  font-size: 14px;
+  color: red;
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 576px) {
+  .send-error{
+    font-size: 10px;
+
+  }
+}

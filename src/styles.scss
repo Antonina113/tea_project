@@ -1,0 +1,60 @@
+.navbar-brand{
+  width: 45px;}
+.nav-link.active{
+  font-weight: 700;
+}
+
+.loader-bg{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.49);
+
+}
+
+.loader{
+  border: 15px solid #f3f3f3;
+  border-top:15px solid #1837ff;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+@media screen and (max-width: 400px) {
+  .btn{
+    font-size: 10px;
+  }
+}
+
+
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+.accordion-block{
+  margin-bottom: 105px;
+}
+.accordion .accordion-item{
+  max-width: 836px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+}
+.accordion .accordion-button{
+  background: #0d6efd;
+  color: white;
+  border-radius: 5px;
+  height: 68px;
+}
